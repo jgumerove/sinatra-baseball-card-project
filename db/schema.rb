@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_155948) do
+ActiveRecord::Schema.define(version: 2021_05_20_172436) do
+
+  create_table "cards", force: :cascade do |t|
+    t.string "player_name"
+    t.string "brand"
+    t.integer "year"
+    t.integer "grade"
+    t.text "note"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"

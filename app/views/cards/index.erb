@@ -1,0 +1,6 @@
+<h1>Baseball Cards</h1>
+<ul>
+<% @cards.each do |card| %>
+  <li><a href="cards/<%= card.id %>"><%= card.player_name %></a></li>
+  <% end %>
+</ul> 

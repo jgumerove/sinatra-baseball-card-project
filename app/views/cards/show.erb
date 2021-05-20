@@ -1,0 +1,9 @@
+<h1><%= @card.player_name %></h1>
+    <p>Player: <%= @card.player_name %></p>
+    <p>Brand: <%= @card.brand %></p>
+    <p>Year: <%= @card.year %></p>
+    <p>Grade: <%= @card.grade %></p>
+    <p>Note: <%= @card.note %></p>
+    <p>Price: <%= @card.price %></p>
+    <p>Owner: <a href="/users/<%=@card.user.id%>"><%= @card.user.username %></a></p>
+ 

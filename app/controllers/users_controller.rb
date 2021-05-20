@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
 
+    get "/users" do
+        @users = User.all
+        erb :"users/index"
+    end
+
+    get "/users/:id" do
+        
+    end
+
     get "/users/new" do
         erb :"users/new"
     end

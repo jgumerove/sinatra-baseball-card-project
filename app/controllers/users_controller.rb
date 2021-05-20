@@ -6,8 +6,9 @@ class UsersController < ApplicationController
     end
 
     get "/users/:id" do
-        
-    end
+        @user = User.find(params[:id])
+        erb :"users/show"
+      end
 
     get "/users/new" do
         erb :"users/new"

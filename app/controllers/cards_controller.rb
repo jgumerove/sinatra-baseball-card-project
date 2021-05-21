@@ -9,7 +9,12 @@ class CardsController < ApplicationController
     #create
     post "/cards" do
         card = current_user.cards.create(params[:card])
-        redirect "/cards/#{card.id}"
+          if card.valid?
+            redirect "/cards/#{card.id}"
+          else
+           flash[:errors] = card.errors.full_messages
+           redirect "/cards/new"
+          end
     end
 
     #index

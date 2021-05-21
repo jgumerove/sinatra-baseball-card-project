@@ -1,0 +1,17 @@
+<h1>Edit <%= @card.player_name %></h1>
+
+<form action="/cards/<%= @card.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" id="player_name" name="card[player_name]" value=<%= @card.player_name %>><br>
+  <label for="brand">Brand:</label><br>
+  <input type="text" id="brand" name="card[brand]" value=<%= @card.brand %>><br>
+  <label for="year">Year:</label><br>
+  <input type="number" id="year" name="card[year]" value=<%= @card.year %>><br>
+  <label for="grade">Grade:</label><br>
+  <input type="number" id="grade" name="card[grade]"value=<%= @card.grade %>><br>
+  <label for="note">Note:</label><br>
+  <input type="text" id="note" name="card[note]"value=<%= @card.note %>><br>
+  <label for="price">Price:</label><br>
+  <input type="number" id="price" name="card[price]"value=<%= @card.price %>><br>
+  <input type="submit" value="Add a Card">
+</form>

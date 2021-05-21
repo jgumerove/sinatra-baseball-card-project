@@ -6,4 +6,6 @@
     <p>Note: <%= @card.note %></p>
     <p>Price: <%= @card.price %></p>
     <p>Owner: <a href="/users/<%=@card.user.id%>"><%= @card.user.username %></a></p>
+
+    <a href="/cards/<%= @card.id %>/edit">Edit <%= @card.player_name %></a>
  

@@ -1,27 +1,38 @@
 class CardsController < ApplicationController
 
-    get "/cards" do
-        @cards = Card.all
-        erb :"cards/index"
-    end
-
+    #new
     get "/cards/new" do
         erb :"cards/new"
     end
 
-    get "/cards/:id" do
-        @card = Card.find(params[:id])
-        erb :"cards/show"
-    end
-
+    #create
     post "/cards" do
         card = current_user.cards.create(params[:card])
         redirect "/cards/#{card.id}"
     end
 
+    #index
+    get "/cards" do
+        @cards = Card.all
+        erb :"cards/index"
+    end
+
+    #show
+    get "/cards/:id" do
+        @card = Card.find(params[:id])
+        erb :"cards/show"
+    end
+
+   #edit
     get "/cards/:id/edit" do
         @card = Card.find(params[:id])
         erb :"cards/edit"
+    end
+
+    patch "/cards/:id" do
+        card = Card.find(params[:id])
+        card.update(params[:card])
+        redirect "/cards/#{card.id}"
     end
 
     

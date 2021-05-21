@@ -51,6 +51,5 @@ class CardsController < ApplicationController
         redirect "/cards"
     end
 
-    
 
 end

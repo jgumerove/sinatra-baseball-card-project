@@ -37,8 +37,12 @@ class CardsController < ApplicationController
 
     patch "/cards/:id" do
         card = Card.find(params[:id])
-        card.update(params[:card])
-        redirect "/cards/#{card.id}"
+        if card.update(params[:card])
+          redirect "/cards/#{card.id}"
+        else
+          flash[:errors] = card.errors.full_messages
+          redirect "/cards/#{card.id}/edit"
+        end
     end
 
     delete "/cards/:id" do

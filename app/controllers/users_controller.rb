@@ -5,6 +5,10 @@ class UsersController < ApplicationController
         erb :"users/index"
     end
 
+    get "/profile" do
+        redirect "/users/#{current_user.id}"
+    end
+
     get "/users/:id" do
         @user = User.find(params[:id])
         erb :"users/show"

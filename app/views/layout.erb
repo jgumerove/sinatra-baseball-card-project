@@ -18,7 +18,10 @@
     <nav>
     <% if logged_in? %>
       <a href="/logout">Log Out</a> |
-      <a href="/users">All Users</a>
+      <a href="/profile">Your Collection</a> |
+      <a href="/users">All Users</a> |
+      <a href="/cards">View All Cards</a> |
+      <a href="/cards/new">Add Card to Collection</a> |
     <% else %>
       <a href="/users/new">Sign Up!</a> |
       <a href="/login">Login!</a>

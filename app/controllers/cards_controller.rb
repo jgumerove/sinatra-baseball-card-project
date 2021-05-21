@@ -2,6 +2,7 @@ class CardsController < ApplicationController
 
     #new
     get "/cards/new" do
+        @card = Card.new
         erb :"cards/new"
     end
 

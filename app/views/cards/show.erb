@@ -8,4 +8,9 @@
     <p>Owner: <a href="/users/<%=@card.user.id%>"><%= @card.user.username %></a></p>
 
     <a href="/cards/<%= @card.id %>/edit">Edit <%= @card.player_name %></a>
+
+    <form action="/cards/<%= @card.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete card">
+    </form>
  

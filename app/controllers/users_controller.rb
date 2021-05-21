@@ -20,10 +20,10 @@ class UsersController < ApplicationController
 
 
     post "/users" do
-       user = User.create(params) 
-       if user.valid?
+       user = User.new(params) 
+       if user.save
          session[:user_id] = user.id
-         redirect "/" #this will not be final this is just initial set-up
+         redirect "/" 
        else 
         flash[:errors] = user.errors.full_messages
         redirect "/users/new"

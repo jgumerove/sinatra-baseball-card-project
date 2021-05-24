@@ -2,11 +2,11 @@
 
 <% if @user.cards.any? %>
 <h3>Below are the cards in this collection (<%= @user.cards.all.size%> total):</h3>
-<ol>
+<ul>
   <% @user.cards.each do |card| %>
       <li><a href="/cards/<%= card.id %>"><%=card.player_name%></a></li>
     <% end %>
-</ol>
+</ul>
   <% else %>
      <h2>There are currently no baseball cards in this collection</h2>
      <% if @user == current_user %>

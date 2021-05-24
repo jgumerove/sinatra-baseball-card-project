@@ -3,6 +3,8 @@
 <form action="/cards" method="post">
   <label for="player_name">Player:</label><br>
   <input type="text" id="player_name" name="card[player_name]" value=<%= @card.player_name %>><br>
+  <label for="image">Image:</label><br>
+  <input type="text" id="image" name="card[image]" value=<%= @card.image %>><br>
   <label for="brand">Brand:</label><br>
   <input type="text" id="brand" name="card[brand]" value=<%= @card.brand %>><br>
   <label for="year">Year:</label><br>

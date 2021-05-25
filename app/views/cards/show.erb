@@ -1,5 +1,13 @@
 <h1><%= @card.player_name %></h1>
-    <p>Image: <img src=<%= @card.image %> alt="Picture of <%= @card.player_name %>"/></p>
+
+<style>
+img {
+  width: 400px;
+  height: 300px
+}
+</style>
+
+    <img src=<%= @card.image %> alt="Picture of <%= @card.player_name %>" title="<%= @card.player_name %> card"/>
     <p>Brand: <%= @card.brand %></p>
     <p>Year: <%= @card.year %></p>
     <p>Grade: <%= @card.grade %></p>

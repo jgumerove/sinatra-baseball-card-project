@@ -1,12 +1,39 @@
 <h1><%= @user.username %></h1>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 
 <% if @user.cards.any? %>
 <h3>Below are the cards in this collection (<%= @user.cards.all.size%> total):</h3>
-<ul>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Brand</th>
+    <th>Year</th>
+  </tr>
+  <tr>
   <% @user.cards.each do |card| %>
-      <li><a href="/cards/<%= card.id %>"><%=card.player_name%></a></li>
+      <td><a href="/cards/<%= card.id %>"><%=card.player_name%></a></td>
+      <td> <%= card.brand %></td>
+      <td ><%= card.year %></td>
+  </tr>
     <% end %>
-</ul>
+</table>
   <% else %>
      <h2>There are currently no baseball cards in this collection</h2>
      <% if @user == current_user %>

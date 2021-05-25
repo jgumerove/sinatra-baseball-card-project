@@ -1,6 +1,32 @@
 <h1>Baseball Cards - (<%= Card.all.size %> total)</h1>
-<ul>
-<% @cards.each do |card| %>
-  <li><a href="cards/<%= card.id %>"><%= card.player_name %></a></li>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Brand</th>
+    <th>Year</th>
+  </tr>
+  <tr>
+  <% @cards.each do |card| %>
+    <td><a href="cards/<%= card.id %>"><%= card.player_name %></a></td>
+    <td> <%= card.brand %></td>
+    <td> <%= card.year %></td>
+  </tr>
   <% end %>
-</ul> 
+</table> 

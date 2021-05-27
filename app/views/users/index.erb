@@ -1,8 +1,32 @@
-<h1>Take a look at the other baseball card collectors using our site (<%= @users.all.size %> total)</h1>
-<ul>
-<% @users.each do |user| %>
-<li>
+<h1>Take a look at the other baseball card collectors using our site (<%= @users.all.size %> total):</h1>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Collection Size</th>
+  </tr>
+  <tr>
+  <% @users.each do |user| %>
+<td>
 <a href="/users/<%= user.id %>"><%= user.username %>
-</li>
+</td>
+<td> <%= user.cards.size %></td>
+</tr>
 <% end %>
-</ul>
+</table>

@@ -93,6 +93,7 @@
     width: auto;
   }
 
+
   .content, .sidebar {
     float: none;
     width: 100%;
@@ -120,6 +121,8 @@
   color: red;
   font-style: italic
 }
+
+
 
 
 

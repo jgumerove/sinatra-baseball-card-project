@@ -48,7 +48,7 @@ class CardsController < ApplicationController
     delete "/cards/:id" do
         card = Card.find(params[:id])
         card.destroy
-        redirect "/cards"
+        redirect "/users/#{current_user.id}"
     end
 
 

@@ -20,12 +20,14 @@ class CardsController < ApplicationController
 
     #index
     get "/cards" do
+        redirect_if_not_logged_in
         @cards = Card.all
         erb :"cards/index"
     end
 
     #show
     get "/cards/:id" do
+        redirect_if_not_logged_in
         @card = Card.find(params[:id])
         erb :"cards/show"
     end
@@ -34,8 +36,13 @@ class CardsController < ApplicationController
     get "/cards/:id/edit" do
         redirect_if_not_logged_in
         @card = Card.find(params[:id])
-        erb :"cards/edit"
+          if @card.user == current_user
+            erb :"cards/edit"
+          else 
+            redirect "/users/#{current_user.id}"
+       end
     end
+
 
     patch "/cards/:id" do
         card = Card.find(params[:id])

@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :welcome
   end
+  
 
   helpers do
 
@@ -22,6 +23,10 @@ class ApplicationController < Sinatra::Base
     
     def current_user
       logged_in? && User.find(session[:user_id]) #if true will return second thing if false return first thing 
+    end
+
+    def redirect_if_not_logged_in
+      redirect "/login" if !current_user
     end
 
     def separate_comma(number)

@@ -2,6 +2,7 @@ class CardsController < ApplicationController
 
     #new
     get "/cards/new" do
+        redirect_if_not_logged_in
         @card = Card.new
         erb :"cards/new"
     end
@@ -31,6 +32,7 @@ class CardsController < ApplicationController
 
    #edit
     get "/cards/:id/edit" do
+        redirect_if_not_logged_in
         @card = Card.find(params[:id])
         erb :"cards/edit"
     end

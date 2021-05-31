@@ -18,7 +18,7 @@ img {
 
     <% if current_user == @card.user%>
     <a href="/cards/<%= @card.id %>/edit">Edit <%= @card.player_name %></a>
-
+    <br><br>
     <form action="/cards/<%= @card.id %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="delete card">

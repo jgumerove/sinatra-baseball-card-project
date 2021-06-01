@@ -36,6 +36,13 @@
       </ul>
     <% end %>
 
+    <% if flash[:message] %>
+       <ul class="message">
+       <li><%= flash[:message] %></li>
+       <% end %>
+       </ul>
+       
+
         <%= yield %>
 
       <footer class="branding">

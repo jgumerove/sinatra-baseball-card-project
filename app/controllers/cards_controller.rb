@@ -11,6 +11,7 @@ class CardsController < ApplicationController
     post "/cards" do
         card = current_user.cards.create(params[:card])
           if card.valid?
+            flash[:message] = "card sucessfully added!"
             redirect "/cards/#{card.id}"
           else
            flash[:errors] = card.errors.full_messages
@@ -47,6 +48,7 @@ class CardsController < ApplicationController
     patch "/cards/:id" do
         card = Card.find(params[:id])
         if card.update(params[:card])
+          flash[:message] = "card successfully updated!"
           redirect "/cards/#{card.id}"
         else
           flash[:errors] = card.errors.full_messages
@@ -57,6 +59,7 @@ class CardsController < ApplicationController
     delete "/cards/:id" do
         card = Card.find(params[:id])
         card.destroy
+        flash[:message] = "card deleted from collection!"
         redirect "/users/#{current_user.id}"
     end
 

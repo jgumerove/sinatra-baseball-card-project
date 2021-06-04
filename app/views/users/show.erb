@@ -30,7 +30,7 @@ h1, h3 {
 <h1><%= @user.username %></h1>
 
 <% if @user.cards.any? %>
-<h3>This collection has a total value of $<%= separate_comma(@user.cards.sum(:price)) %> - Below are the cards in this collection (<%= @user.cards.all.size%> total):</h3>
+<h3>This collection has a total value of $<%= @user.cards.sum(:price) %> - Below are the cards in this collection (<%= @user.cards.all.size%> total):</h3>
 
 <table>
   <tr>

@@ -10,10 +10,10 @@ clone this repository:
 ## Usage
 In order to use the application the Sinatra server must be run. Type the following command in the terminal:
 - **shotgun**
-<a>
+<!-- -->
 After running the above, users must visit the following host in their browsers:
 - **localhost:9393**
-<a>
+<!-- -->
 Users will then be prompted to login or create an account in order to use the application.
 
 ## Contributor Guide

@@ -1,5 +1,5 @@
 ## About BaseballCardManager
-BaseBallCardManager is a Sinatra-based web application that utilizes the ActiveRecord Object-Relational-Map. The application helps baseball card collectors catalogue their card collections. Additionally, users are able to view the card collections of other application users. 
+BaseballCardManager is a Sinatra-based web application that utilizes the ActiveRecord Object-Relational-Map. The application helps baseball card collectors catalogue their card collections. Additionally, users are able to view the card collections of other application users. 
 
 ## Installation
 clone this repository:
